@@ -1,0 +1,13 @@
+  [tool] ejecutando read_file({'path': 'hola.txt'})
+El archivo **hola.txt** contiene el siguiente texto:
+
+> "Este es un archivo de prueba."
+  [tool] ejecutando list_files({'path': '.'})
+  [tool] ejecutando write_file({'path': 'resumen.txt', 'content': 'El workspace tenía 4 archivos.\n'})
+Listé el workspace y encontré 4 archivos: `hola.txt`, `resumen.txt`, `dummy_file_2.txt` y `dummy_file_1.txt`.
+
+Luego creé (sobrescribí) el archivo `resumen.txt` con el siguiente contenido:
+
+```
+El workspace tenía 4 archivos.
+```

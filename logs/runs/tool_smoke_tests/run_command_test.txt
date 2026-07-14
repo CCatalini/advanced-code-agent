@@ -1,0 +1,2 @@
+  [tool] ejecutando run_command({'command': 'wc -l ia_history.txt'})
+El archivo **ia_history.txt** tiene **7 líneas**.

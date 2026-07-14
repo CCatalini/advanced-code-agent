@@ -1,0 +1,7 @@
+Historia de la Inteligencia Artificial (resumen)
+
+La inteligencia artificial (IA) tiene sus raíces en la antigüedad, con mitos sobre autómatas y seres artificiales, pero como disciplina científica nace en 1956, en la Conferencia de Dartmouth, donde John McCarthy acuñó el término "inteligencia artificial". Antes, Alan Turing había planteado en 1950 su famoso test para evaluar si una máquina podía "pensar".
+
+Entre 1950 y 1970 hubo gran entusiasmo y desarrollo de programas capaces de resolver problemas lógicos y jugar ajedrez. Sin embargo, las limitaciones tecnológicas llevaron a los llamados "inviernos de la IA" en los 70 y 80, períodos de escaso financiamiento y avances.
+
+En los 90, el aprendizaje automático (machine learning) resurgió gracias a mayor poder de cómputo y datos, destacando el triunfo de Deep Blue sobre Kasparov en 1997. Ya en el siglo XXI, el auge de las redes neuronales profundas (deep learning) revolucionó el campo, permitiendo avances en visión artificial, procesamiento de lenguaje natural y modelos generativos como GPT, transformando la IA en una tecnología cotidiana presente en múltiples sectores.

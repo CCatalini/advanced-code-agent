@@ -1,0 +1,4 @@
+  [tool] ejecutando read_file({'path': 'hola.txt'})
+El archivo **hola.txt** dice:
+
+> Este es un archivo de prueba.

@@ -1,0 +1,39 @@
+  [tool] ejecutando web_search({'query': 'historia de la inteligencia artificial resumen'})
+  [tool] ejecutando write_file({'path': 'ia_history.txt', 'content': 'Historia de la Inteligencia Artificial
+            Los orígenes de la IA se remontan a los años 30 y 40, con Alan Turing, quien sentó bases teóricas sobre computación y máquinas capaces de "pensar", proponiendo el famoso Test de Turing en 1950.
+            El término "inteligencia artificial" fue acuñado en 1956 durante la Conferencia de Dartmouth, considerada el nacimiento formal de la disciplina, impulsada por pioneros como John McCarthy, Marvin Minsky y Claude Shannon.
+
+            Durante las décadas de 1950-1970 se desarrollaron los primeros programas de razonamiento y juegos.
+            Sin embargo, las limitaciones tecnológicas y expectativas excesivas provocaron el primer "invierno de la IA" en los años 70, con recortes de financiamiento.
+
+            En los 80 resurgió el interés con los sistemas expertos, aunque un segundo invierno llegó en los 90.
+            El renacimiento definitivo se dio en los 2000 y 2010 gracias al aumento del poder computacional, big data y el desarrollo del deep learning y redes neuronales.
+
+            Hitos como el triunfo de Deep Blue sobre Kasparov (1997), AlphaGo (2016) y modelos de lenguaje como GPT marcaron la era moderna.
+            Hoy la IA está integrada en la vida cotidiana, transformando industrias, la comunicación y la toma de decisiones, con un crecimiento acelerado y debates sobre ética, regulación y su impacto futuro en la sociedad.
+  '})
+  [tool] ejecutando write_file({'path': 'ia_history.txt', 'content': 'Historia de la Inteligencia Artificial
+            Los orígenes de la IA se remontan a los años 30 y 40, con Alan Turing, quien sentó bases teóricas sobre computación y máquinas capaces de "pensar", proponiendo el Test de Turing en 1950.
+            El término "inteligencia artificial" se acuñó en 1956 en la Conferencia de Dartmouth, considerada el nacimiento formal de la disciplina, impulsada por John McCarthy, Marvin Minsky y Claude Shannon.
+
+            Entre 1950 y 1970 surgieron los primeros programas de razonamiento y juegos, pero expectativas excesivas y limitaciones tecnológicas causaron el primer "invierno de la IA" en los 70.
+            En los 80 resurgió el interés con sistemas expertos, aunque llegó un segundo invierno en los 90.
+
+            El renacimiento definitivo ocurrió en los 2000-2010, gracias al mayor poder computacional, big data y el deep learning.
+            Hitos como Deep Blue (1997), AlphaGo (2016) y los modelos de lenguaje GPT marcaron la era moderna.
+            Hoy la IA está integrada en la vida cotidiana, transformando industrias y generando debates sobre ética y su impacto futuro.
+  '})
+
+Listo. Investigué la historia de la inteligencia artificial y guardé un resumen de aproximadamente 1050 caracteres en el archivo **ia_history.txt**, cubriendo los hitos principales:
+
+- **Orígenes (años 30-50)**: Alan Turing y el Test de Turing.
+- **Nacimiento formal (1956)**: Conferencia de Dartmouth, con McCarthy, Minsky y Shannon.
+- **Primeros avances e "inviernos de la IA"** en los 70 y 90 por expectativas excesivas y limitaciones tecnológicas.
+- **Resurgimiento con sistemas expertos** en los 80.
+- **Renacimiento moderno (2000-2010)** gracias al big data y deep learning.
+- **Hitos recientes**: Deep Blue (1997), AlphaGo (2016) y los modelos GPT.
+- **Situación actual**: integración de la IA en la vida cotidiana y debates éticos.
+
+El archivo ya está creado en el workspace, listo para usar.
+
+
