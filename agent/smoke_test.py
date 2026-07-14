@@ -7,7 +7,7 @@ load_dotenv()
 client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
 response = client.messages.create(
-    model="claude-sonnet-5",
+    model=os.environ["ANTHROPIC_MODEL"],
     max_tokens=200,
     messages=[{"role": "user", "content": "Decime hola en una frase"}]
 )

@@ -5,8 +5,18 @@ from tools import TOOL_FUNCTIONS, TOOL_SCHEMAS
 
 load_dotenv()
 client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-MODEL = "claude-sonnet-5"
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL = os.environ["ANTHROPIC_MODEL"]
+
+
+def extract_text(content_blocks):
+    """
+    Busca el bloque de tipo 'text' dentro de la respuesta del modelo
+    'Content' puede incluir bloques de otros tipos (ej: 'thinking') antes del texto.
+    """
+    for block in content_blocks:
+        if block.type == "text":
+            return block.text
+    return ""
 
 
 def execute_tool(name, tool_input):
@@ -22,7 +32,7 @@ def run_task(messages):
         messages.append({"role": "assistant", "content": response.content})
 
         if response.stop_reason != "tool_use":
-            return response.content[0].text
+            return extract_text(response.content)
 
         tool_results = []
         for block in response.content:
@@ -36,16 +46,17 @@ def run_task(messages):
         messages.append({"role": "user", "content": tool_results})
 
 
-if __name__ == "__main__":
-    # task1 = [{"role": "user", "content": "Leé el archivo hola.txt y decime qué dice."}]
-    # task2 = [{"role": "user", "content": "Listá los archivos del workspace, después creá uno nuevo llamado"
-    #                                         "resumen.txt que diga cuántos archivos había."}]
-    #   task3 = [{"role": "user", "content": "Buscá en la web información sobre la historia de la inteligencia artificial "
-    #                                       "y escribí un resumen de 1000 caracteres en un archivo llamado ia_history.txt."}]
+def chat_loop():
+    messages = []
+    print("Agente listo. Escribí 'salir' para terminar.")
+    while True:
+        user_input = input("\nVos: ")
+        if user_input.strip().lower() == "salir":
+            break
+        messages.append({"role": "user", "content": user_input})
+        final_text = run_task(messages)
+        print(f"\nAgente: {final_text}")
 
-    task4 = [{"role": "user", "content": "Corré el comando 'wc -l ia_history.txt' en el workspace y decime cuántas "
-                                         "líneas tiene el archivo."}]
-    # print(run_task(task1))
-    # print(run_task(task2))
-    # print(run_task(task3))
-    print(run_task(task4))
+
+if __name__ == "__main__":
+    chat_loop()

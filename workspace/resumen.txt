@@ -1,6 +1,0 @@
-Antes de crear este archivo, el workspace tenía 5 archivos:
-1. hola.txt
-2. resumen.txt
-3. dummy_file_2.txt
-4. dummy_file_1.txt
-5. ia_history.txt
