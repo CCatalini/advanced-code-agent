@@ -26,8 +26,10 @@ def conversation_mode():
     print(f"  Supervision: {'ON' if supervision_on else 'OFF'}")
 
     while True:
-        user_input = input("\nYou: ")
-        if user_input.strip().lower() == "exit":
+        user_input = input("\nYou: ").strip()
+        if not user_input:
+            continue
+        if user_input.lower() in ("exit", "cancel", "ex", "0"):
             break
         messages.append({"role": "user", "content": user_input})
         final_text = run_task(messages, plan_mode=plan_mode, supervision_on=supervision_on)
@@ -55,19 +57,30 @@ def run_task(messages, plan_mode=False, supervision_on=False):
             text = extract_text(response.content)
 
             if awaiting_approval:
+                if not text.strip():
+                    print("\n[PROPOSED PLAN] The model returned no plan text, asking it to try again.")
+                    messages.append({
+                        "role": "user",
+                        "content": "You didn't return a plan. Please provide a numbered plan before proceeding."
+                    })
+                    continue
+
                 print(f"\n[PROPOSED PLAN]\n{text}")
-                answer = input(
-                    "Do you approve the plan? (yes / cancel / or type the changes you want): "
-                ).strip()
+                while True:
+                    answer = input(
+                        "Do you approve the plan? (y / n / or type the changes you want): "
+                    ).strip()
+                    if answer:
+                        break
+                    print("Empty response. Type 'y', 'n', or the changes you want.")
                 decision = answer.lower()
 
-                if decision == "cancel":
+                if decision in ("exit", "cancel", "ex", "0"):
                     return "Plan rejected by the user."
                 elif decision in ("y", "yes"):
                     plan_approved = True
                     messages.append({"role": "user", "content": "Plan approved, proceed to execute it."})
                 else:
-                    # Cualquier otra respuesta se interpreta como pedido de modificación.
                     messages.append({"role": "user", "content": f"Adjust the plan with this: {answer}"})
                 continue
 
@@ -101,10 +114,10 @@ def build_system_prompt(plan_mode, plan_approved):
 
 
 def execute_tool(name, tool_input, supervision_on=False):
-    """Ejecuta una tool real, pidiendo confirmación si supervisión está activa."""
+    """Ejecuta una tool, pidiendo confirmación si supervision está activo"""
     if supervision_on and name not in READ_ONLY_TOOLS:
         print(f"\n[SUPERVISION] The agent wants to execute: {name}({tool_input})")
-        if not ask_yes_no("Do you approve this action?"):
+        if not ask_yes_no("\nDo you approve this action?"):
             return "Action rejected by the user."
     print(f"  [tool] executing {name}({tool_input})")
     return TOOL_FUNCTIONS[name](**tool_input)
