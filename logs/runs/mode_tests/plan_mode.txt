@@ -60,3 +60,45 @@ Everything is in place as requested.
 
 You: exit
 (.venv) ➜  agent git:(main) ✗
+
+================================================================================
+--------------------------- PLAN AND REJECT TEST -------------------------------
+================================================================================
+
+========= The agent is ready. =========
+ Type 'exit' to end the session.
+
+Do you want to enable plan mode? (y/n): y
+Do you want to enable supervision? (y/n): n
+
+Configuration:
+  Plan mode:   ON
+  Supervision: OFF
+
+You: Create a file workspace/mode_tests/plan_reject_demo/note.txt with the text 'hello world'.
+
+--- internal loop iteration 1 ---
+
+[PROPOSED PLAN]
+Plan:
+1. Use the write_file tool to create the file at `workspace/mode_tests/plan_reject_demo/note.txt` with the content `hello world`.
+
+Waiting for your approval before proceeding.
+
+Do you approve the plan? (y / n / off / or type the changes you want): Also add a comment with today's date at the top of the file
+
+--- internal loop iteration 2 ---
+
+[PROPOSED PLAN]
+Updated Plan:
+1. Run a terminal command (e.g., `date`) to get today's date.
+2. Construct file content with a comment line containing today's date at the top, followed by the text "hello world".
+3. Use the write_file tool to create `workspace/mode_tests/plan_reject_demo/note.txt` with that content.
+
+Waiting for your approval before proceeding.
+
+Do you approve the plan? (y / n / off / or type the changes you want): n
+
+Agent: Plan rejected by the user.
+[plan mode still ON — send 'off' to turn it off]
+

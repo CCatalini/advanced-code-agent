@@ -56,3 +56,32 @@ test_utils.py::test_invalid_type PASSED                                  [100%]
 All 7 tests passed.
 
 You: exit
+
+================================================================================
+---------------------- SUPERVISION AND REJECT TEST -----------------------------
+================================================================================
+
+(.venv) ➜  agent git:(main) ✗ python harness.py
+========= The agent is ready. =========
+ Type 'exit' to end the session.
+
+Do you want to enable plan mode? (y/n): n
+Do you want to enable supervision? (y/n): y
+
+Configuration:
+  Plan mode:   OFF
+  Supervision: ON
+
+You: Create a file workspace/mode_tests/supervision_reject_demo/note.txt with the text 'hello world'.
+
+--- internal loop iteration 1 ---
+
+[SUPERVISION] The agent wants to execute: write_file({'path': 'workspace/mode_tests/supervision_reject_demo/note.txt', 'content': 'hello world'})
+Do you approve this action? (y/n/off): n
+
+--- internal loop iteration 2 ---
+
+Agent: It looks like the file creation action was rejected. Would you like me to try again, or is there something else you'd like me to adjust before proceeding?
+[supervision still ON — send 'off' to turn it off]
+
+You: Create a file workspace/mode_tests/supervision_reject_demo/note.txt with the text 'hello world'.
