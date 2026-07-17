@@ -1,0 +1,16 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.6, pytest-8.4.2, pluggy-1.6.0 -- /Users/cami/faculty/cuarto/artificial-intelligence/coding-agent/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /Users/cami/faculty/cuarto/artificial-intelligence/coding-agent/workspace/mode_tests/plan_and_supervision
+plugins: anyio-4.12.1
+collecting ... collected 7 items
+
+test_utils.py::test_negative_numbers PASSED                              [ 14%]
+test_utils.py::test_zero_and_one PASSED                                  [ 28%]
+test_utils.py::test_small_primes PASSED                                  [ 42%]
+test_utils.py::test_small_non_primes PASSED                              [ 57%]
+test_utils.py::test_larger_primes PASSED                                 [ 71%]
+test_utils.py::test_larger_non_primes PASSED                             [ 85%]
+test_utils.py::test_non_integer_input PASSED                             [100%]
+
+============================== 7 passed in 0.02s ===============================
