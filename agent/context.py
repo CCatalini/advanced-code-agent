@@ -6,15 +6,15 @@ import observability
 client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 MODEL = os.environ["ANTHROPIC_MODEL"]
 
-# Cada cuántos mensajes del historial externo se dispara un resumen, y cuántos
-# mensajes recientes se dejan sin tocar (crudos) después de resumir.
+# Cada cuántos mensajes del historial externo se dispara un resumen,
+# y cuántos mensajes recientes se dejan sin tocar después de resumir.
 SUMMARY_THRESHOLD = 12
 KEEP_LAST = 4
 
 
 def maybe_summarize(messages):
     """Si la conversación externa (entre turnos de usuario) creció demasiado, reemplaza
-    los mensajes más viejos por un resumen compacto, para no mandar todo el historial
+    los mensajes más viejos por un resumen compacto, para no mandar el historial
     completo al modelo en cada turno."""
     if len(messages) <= SUMMARY_THRESHOLD:
         return messages
