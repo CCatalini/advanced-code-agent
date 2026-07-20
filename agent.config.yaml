@@ -1,0 +1,11 @@
+workspace: ../flask-class
+
+permissions:
+  read:
+    deny: [".env", "**/*.pem", "secrets/**", ".git/**"]
+  write:
+    deny: [".github/**", ".git/**", ".venv/**", ".idea/**", "instance/**"]
+
+commands:
+  deny: ["rm -rf", "git push"]
+  require_approval: ["pip install", "git commit"]
