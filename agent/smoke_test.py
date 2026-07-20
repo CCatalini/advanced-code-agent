@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from anthropic import Anthropic
 
-# File to test the connection to the Anthropic API
+# Prueba rápida de conexión con la API de Anthropic
 load_dotenv()
 client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
