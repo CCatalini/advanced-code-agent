@@ -1,0 +1,21 @@
+{
+  "architecture": "",
+  "important_files": [],
+  "dependencies": [],
+  "useful_commands": [],
+  "conventions": [],
+  "decisions": [
+    "2026-07-19T04:28:46.237501+00:00: modified app.py, init_db.py, templates/index.html, templates/update.html, requirements.txt to address 'Add 'priority' (integer, default 0) and 'due_date' (optional datetime) fields to the Todo model in this Flask app, plus a way to filter and sort the task list by priority and completion status via query parameters on the index route.'"
+  ],
+  "investigated_bugs": [],
+  "session_summaries": [
+    {
+      "date": "2026-07-18T16:19:04.660951+00:00",
+      "summary": "Request: Add 'priority' (integer, default 0) and 'due_date' (optional datetime) fields to the Todo model in this Flask app, plus a way to filter and sort the task list by priority and completion status via query parameters on the index route. The app already has a real SQLite database created once via init_db.py, and there is no migrations tool installed. There are no automated tests yet — add some covering the new behavior, and make sure the existing routes (/, /delete/<id>, /update/<id>) still work. Use the Explorer, Researcher, Implementer, Tester and Reviewer subagents as appropriate instead of doing everything yourself.. Subagents used: Explorer, Researcher."
+    },
+    {
+      "date": "2026-07-19T04:28:46.237869+00:00",
+      "summary": "Request: Add 'priority' (integer, default 0) and 'due_date' (optional datetime) fields to the Todo model in this Flask app, plus a way to filter and sort the task list by priority and completion status via query parameters on the index route.. Subagents used: Explorer, Researcher, Implementer, Tester, Reviewer."
+    }
+  ]
+}
