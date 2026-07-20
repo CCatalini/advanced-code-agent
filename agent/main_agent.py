@@ -1,5 +1,8 @@
 import os
 from dotenv import load_dotenv
+
+load_dotenv()
+
 from anthropic import Anthropic
 from tools import TOOL_SCHEMAS
 from execution import execute_tool, extract_text
@@ -10,7 +13,6 @@ import context
 import memory
 import observability
 
-load_dotenv()
 client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 MODEL = os.environ["ANTHROPIC_MODEL"]
 
